@@ -1,0 +1,60 @@
+/* scrollbar */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import '~bootstrap/dist/css/bootstrap.min.css';
+/* @import "~bootstrap/scss/bootstrap"; */
+
+@import 'simplebar-react/dist/simplebar.min.css';
+
+.m-0-span .css-1gnd1fd-MuiButton-endIcon {
+  margin: 0;
+}
+.swal2-container {
+  z-index: 1174;
+}
+
+@media (min-width: 1200px) {
+  .css-1oqqzyl-MuiContainer-root {
+    max-width: unset !important;
+  }
+}
+
+.ReactGridGallery_tile {
+  border-radius: 12px;
+  overflow: hidden;
+  height: fit-content;
+}
+.ReactGridGallery > div {
+  gap: 15px;
+  justify-content: center;
+  padding: 10px;
+  /* border: 1px solid rgb(139, 137, 137); */
+  border-radius: 10px;
+}
+.ReactGridGallery_tile-viewport img {
+  transition: all 0.2s ease-in-out;
+}
+/* 
+.ReactGridGallery_tile-viewport::before {
+  content: 'X';
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: rgb(226, 50, 50);
+  color: white; 
+  cursor: pointer;
+  padding: 5px;
+  border-bottom-left-radius:9px
+} */
+.ReactGridGallery_tile-viewport img:hover {
+  filter: brightness(0.9);
+}
+
+.ReactGridGallery_custom-overlay:hover {
+  z-index: 20;
+}
+
+.delete_btn:hover {
+  background-color: #9b1c1c !important;
+}

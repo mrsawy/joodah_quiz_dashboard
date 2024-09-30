@@ -25,6 +25,7 @@ import {
   jooodah_dashboard_url,
   convince_dashboard_url,
   base_url,
+  accounting_dashboard_url
 } from '../../utils/base_url';
 
 //
@@ -34,6 +35,9 @@ const GroupButton = () => {
     { title: `Joodah Dashboard`, url: jooodah_dashboard_url },
     { title: `Salesforce Dashboard`, url: sales_dashboard_url },
     { title: `Convince Dashboard`, url: convince_dashboard_url },
+    { title: `Accounting Dashboard`, url: accounting_dashboard_url },
+
+    // accounting_dashboard_url
   ];
 
   let initState;
@@ -51,7 +55,7 @@ const GroupButton = () => {
     return (
       <a
         href={option.url}
-        className={`h-full w-full  py-2 px-9 whitespace-nowrap flex scale-125`}
+        className={`h-full w-full px-3 whitespace-nowrap flex `}
       >
         {option.title}
       </a>
@@ -68,6 +72,7 @@ const GroupButton = () => {
           optionLabel="title"
           onChange={(e, t) => {
             setValue(e.value);
+            window.location = e.value.url;
           }}
           options={options}
         />

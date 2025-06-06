@@ -57,9 +57,6 @@ export default ({
             <strong>phone</strong> : {phone}
           </Typography>
           <Typography component="h4">
-            <strong>phone</strong> : {phone}
-          </Typography>
-          <Typography component="h4">
             <strong>age</strong> : {age}
           </Typography>
           <Typography component="h4">

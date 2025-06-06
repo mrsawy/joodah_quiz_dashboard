@@ -9,11 +9,11 @@ export default function InstructionsAR() {
   const { siteData } = useSelector((s) => s.site);
   const [text, setText] = useState('');
 
+  let value = siteData?.find(
+    (d) => d?.identifier == `instructions-ar`
+  )?.value;
   useLayoutEffect(() => {
     if (Array.isArray(siteData)) {
-      let value = siteData?.find(
-        (d) => d?.identifier == `instructions-ar`
-      )?.value;
       if (value) {
         // console.log(`value has`);
         setTimeout(() => {
@@ -33,10 +33,22 @@ export default function InstructionsAR() {
   return (
     <>
       <div className="card">
-        <div className="flex justify-center items-center my-6">
+        <div className="flex justify-center items-center my-6 flex-col">
           <label className=" border-4 rounded-xl border-blue-400  p-3 text-xl">
-            Quiz Arabic Instructions
+            Quiz english Instructions
           </label>
+
+          <div className='flex flex-col gap-9 w-full p-4'>
+
+            <h2 className='m-auto text-xl font-bold'>old instructions</h2>
+
+            <div
+              dir='rtl'
+              className=" leading-7 "
+              dangerouslySetInnerHTML={{ __html: value }}
+            />
+          </div>
+
         </div>
         <Editor
           value={text}

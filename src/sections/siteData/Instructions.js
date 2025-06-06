@@ -9,9 +9,10 @@ export default function BasicDemo() {
   const { siteData } = useSelector((s) => s.site);
   const [text, setText] = useState('');
 
+  let value = siteData?.find((d) => d?.identifier == `instructions`)?.value;
+
   useLayoutEffect(() => {
     if (Array.isArray(siteData)) {
-      let value = siteData?.find((d) => d?.identifier == `instructions`)?.value;
       if (value) {
         // console.log(`value has`);
         setTimeout(() => {
@@ -22,6 +23,20 @@ export default function BasicDemo() {
     }
   }, [siteData]);
 
+  useEffect(() => {
+    setTimeout(() => {
+      // if (text && text.length > 0) {
+      //   dispatch(setSite({ identifier: 'instructions', value: text }));
+      // }
+      setText(text);
+
+    }, 2000)
+    console.log(`text changed`, text);
+  }, []);
+
+
+
+
   const handleSubmit = () => {
     dispatch(setSite({ identifier: 'instructions', value: text }));
     setTimeout(() => {
@@ -31,14 +46,24 @@ export default function BasicDemo() {
   return (
     <>
       <div className="card">
-        <div className="flex justify-center items-center my-6">
+        <div className="flex justify-center items-center my-6 flex-col">
           <label className=" border-4 rounded-xl border-blue-400  p-3 text-xl">
             Quiz english Instructions
           </label>
+
+          <div className='flex flex-col gap-9 w-full p-4'>
+
+            <h2 className='m-auto text-xl font-bold'>old instructions</h2>
+
+            <div
+              className=" leading-7"
+              dangerouslySetInnerHTML={{ __html: value }}
+            />
+          </div>
+
         </div>
         <Editor
           value={text}
-          //   defaultValue={siteData?.find((d) => d?.identifier == `instructions`)?.value}
           onTextChange={(e) => setText(e.htmlValue)}
           style={{ height: '620px' }}
         />

@@ -48,7 +48,7 @@ function AddEditQuestion({ questionId, levelId, oldQuestion, editMode }) {
       ? oldQuestion?.correct_answer?.ar
       : '',
   });
-
+  console.log({ formData })
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({

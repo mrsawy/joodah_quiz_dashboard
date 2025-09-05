@@ -11,29 +11,6 @@ export default function BasicDemo() {
 
   let value = siteData?.find((d) => d?.identifier == `instructions`)?.value;
 
-  useLayoutEffect(() => {
-    if (Array.isArray(siteData)) {
-      if (value) {
-        // console.log(`value has`);
-        setTimeout(() => {
-          setText(value);
-          // console.log(`timeout`);
-        }, 100);
-      }
-    }
-  }, [siteData]);
-
-  useEffect(() => {
-    setTimeout(() => {
-      // if (text && text.length > 0) {
-      //   dispatch(setSite({ identifier: 'instructions', value: text }));
-      // }
-      setText(text);
-
-    }, 2000)
-    console.log(`text changed`, text);
-  }, []);
-
 
 
 
@@ -43,6 +20,7 @@ export default function BasicDemo() {
       window.location.reload();
     }, 100);
   };
+  
   return (
     <>
       <div className="card">
